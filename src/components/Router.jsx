@@ -1,21 +1,21 @@
-import { Result } from "postcss";
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Navbar } from "./Navbar";
-// import { Results } from "./Results";
+import React from 'react';
 
-export const Router = () => {
-  return (
-    <div className="p-4">
-      <Routes>
-        <Route path='/' element={<Navigate from='/' to='/search'/>}/>
-        <Route path='/search' element={<Results/>} />
-        <Route />
-        <Route />
-        <Route />
+import { Routes, Route, Navigate } from 'react-router-dom';
 
+import Results from './Results';
 
-      </Routes>
-    </div>
-  );
-};
+const Router = () => (
+  <div className='p-4'>
+    
+    <Routes>
+      <Route path='/' element={<Navigate from='/' to='/search' />}/>
+      <Route path='/search' element={<Results />}/>
+      <Route path='/images' element={<Results />}/>
+      <Route path='/news' element={<Results />}/>
+      <Route path='/videos' element={<Results />}/>
+    </Routes>
+  </div>
+
+);
+
+export default Router
